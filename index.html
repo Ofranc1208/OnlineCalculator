@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Fast, easy offer calculator. No drama, no salesmen. Calculate your offer now.">
+  <title>Offer Calculator</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container py-5">
+  <h2 class="text-center">Offer Calculator</h2>
+  <p class="tagline text-center">No Wait, No Drama, No Salesman!</p>
+
+  <form id="offerForm">
+    <!-- Step 1: Basic Info -->
+    <div id="step1">
+      <!-- Payment Mode -->
+      <div class="mb-3">
+        <label class="form-label">Payment Mode</label>
+        <div id="paymentMode" class="button-grid">
+          <button type="button" class="btn btn-outline-primary">Monthly</button>
+          <button type="button" class="btn btn-outline-primary">Quarterly</button>
+          <button type="button" class="btn btn-outline-primary">Semiannually</button>
+          <button type="button" class="btn btn-outline-primary">Annually</button>
+          <button type="button" class="btn btn-outline-primary span-2">Lump Sum</button>
+        </div>
+      </div>
+
+      <!-- Payment Type -->
+      <div class="mb-3">
+        <label class="form-label">Payment Type</label>
+        <div id="paymentType" class="button-grid">
+          <button type="button" class="btn btn-outline-success" data-type="GP">Guaranteed</button>
+          <button type="button" class="btn btn-outline-success" data-type="LCP">For Life</button>
+          <button type="button" class="btn btn-outline-success span-2" data-type="IDK">Not Sure</button>
+        </div>
+      </div>
+
+      <!-- Age -->
+      <div class="mb-3">
+        <label class="form-label">Age</label>
+        <div id="ageGroup" class="button-grid">
+          <button type="button" class="btn btn-outline-info">18–30</button>
+          <button type="button" class="btn btn-outline-info">31–42</button>
+          <button type="button" class="btn btn-outline-info">43–55</button>
+          <button type="button" class="btn btn-outline-info">56–68+</button>
+        </div>
+      </div>
+
+      <!-- Payment Amount -->
+      <div class="mb-3">
+        <label class="form-label" for="paymentAmount">Payment Amount ($)</label>
+        <input type="number" class="form-control" id="paymentAmount" placeholder="500.00" required />
+      </div>
+
+      <!-- Annual Increase -->
+      <div class="mb-3">
+        <label class="form-label" for="annualIncrease">Annual Increase (%)</label>
+        <input type="range" id="annualIncrease" min="0" max="10" step="1" />
+        <div id="annualIncreaseValue" class="range-value">0%</div>
+      </div>
+
+      <!-- Dates -->
+      <div class="mb-3 row gx-2">
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="startDate">Start Date</label>
+          <input type="month" class="form-control" id="startDate" />
+        </div>
+        <div class="col-12 col-md-6">
+          <label class="form-label" for="endDate">End Date</label>
+          <input type="month" class="form-control" id="endDate" disabled />
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <div class="d-grid">
+        <button type="button" class="btn btn-warning" id="nextBtn">Calculate</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Health Info -->
+    <div id="step2" style="display:none;">
+      <!-- Gender -->
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div id="genderGroup" class="button-grid">
+          <button type="button" class="btn btn-outline-primary">Male</button>
+          <button type="button" class="btn btn-outline-primary">Female</button>
+          <button type="button" class="btn btn-outline-primary span-2">Prefer not to answer</button>
+        </div>
+      </div>
+
+      <!-- Height -->
+      <div class="mb-3">
+        <label class="form-label" for="height">Height</label>
+        <select class="form-select" id="height">
+          <option>4'0"–4'9"</option>
+          <option>4'10"–5'3"</option>
+          <option>5'4"–5'10"</option>
+          <option>5'11"–6'4"</option>
+          <option>6'5"–7'4"</option>
+        </select>
+      </div>
+
+      <!-- Weight -->
+      <div class="mb-3">
+        <label class="form-label" for="weight">Weight (lbs)</label>
+        <select class="form-select" id="weight">
+          <option>76–100</option>
+          <option>101–125</option>
+          <option>126–150</option>
+          <option>151–175</option>
+          <option>176–200</option>
+        </select>
+      </div>
+
+      <!-- Smoking -->
+      <div class="mb-3">
+        <label class="form-label">Do You Smoke?</label>
+        <div id="smokeGroup" class="button-grid">
+          <button type="button" class="btn btn-outline-danger">Yes</button>
+          <button type="button" class="btn btn-outline-danger">No</button>
+        </div>
+      </div>
+
+      <!-- Health Profile -->
+      <div class="mb-3">
+        <label class="form-label">Health Profile</label>
+        <div id="healthProfileGroup" class="button-grid">
+          <button type="button" class="btn btn-outline-success">Great</button>
+          <button type="button" class="btn btn-outline-success">Normal</button>
+          <button type="button" class="btn btn-outline-success">Fair</button>
+          <button type="button" class="btn btn-outline-success">Below Fair</button>
+        </div>
+      </div>
+
+      <!-- Traffic Violations -->
+      <div class="mb-3">
+        <label class="form-label">Major Traffic Violations?</label>
+        <div id="trafficGroup" class="button-grid">
+          <button type="button" class="btn btn-outline-dark">Yes</button>
+          <button type="button" class="btn btn-outline-dark">No</button>
+        </div>
+      </div>
+
+      <!-- Cardiac Health -->
+      <div class="mb-3">
+        <label class="form-label">Cardiac Health</label>
+        <div id="cardiacGroup" class="button-grid">
+          <button type="button" class="btn btn-outline-info">Normal</button>
+          <button type="button" class="btn btn-outline-info">Medicated</button>
+          <button type="button" class="btn btn-outline-info">High</button>
+          <button type="button" class="btn btn-outline-info">Not Sure</button>
+        </div>
+      </div>
+
+      <!-- Back + Final Calculate -->
+      <div class="button-grid" style="margin-top:1rem;">
+        <button type="button" class="btn btn-secondary" id="backBtn">Back</button>
+        <button type="submit" class="btn btn-warning">Calculate</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
