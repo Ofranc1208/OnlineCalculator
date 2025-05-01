@@ -20,6 +20,32 @@
   <form id="offerForm">
     <!-- Step 1: Basic Info -->
     <div id="step1">
+
+   	        <!-- Age -->
+             <div class="mb-3">
+              <label class="form-label">Age</label>
+              <div id="ageGroup" class="button-grid">
+                <button type="button" class="btn btn-outline-info">18 – 25</button>
+                <button type="button" class="btn btn-outline-info">26 – 35</button>
+                <button type="button" class="btn btn-outline-info">36 – 45</button>
+                <button type="button" class="btn btn-outline-info">46 – 50</button>
+                <button type="button" class="btn btn-outline-info">51 – 56</button>
+                <button type="button" class="btn btn-outline-info">56 – 65</button>
+               
+               
+              </div>
+            </div>
+      
+        <!-- Payment Type -->
+        <div class="mb-3">
+          <label class="form-label">Payment Type</label>
+          <div id="paymentType" class="button-grid">
+            <button type="button" class="btn btn-outline-success" data-type="GP">Guaranteed</button>
+            <button type="button" class="btn btn-outline-success" data-type="LCP">For Life</button>
+            <button type="button" class="btn btn-outline-success span-2" data-type="IDK">Not Sure</button>
+          </div>
+        </div>
+
       <!-- Payment Mode -->
       <div class="mb-3">
         <label class="form-label">Payment Mode</label>
@@ -29,29 +55,6 @@
           <button type="button" class="btn btn-outline-primary">Semiannually</button>
           <button type="button" class="btn btn-outline-primary">Annually</button>
           <button type="button" class="btn btn-outline-primary span-2">Lump Sum</button>
-        </div>
-      </div>
-
-      <!-- Payment Type -->
-      <div class="mb-3">
-        <label class="form-label">Payment Type</label>
-        <div id="paymentType" class="button-grid">
-          <button type="button" class="btn btn-outline-success" data-type="GP">Guaranteed</button>
-          <button type="button" class="btn btn-outline-success" data-type="LCP">For Life</button>
-          <button type="button" class="btn btn-outline-success span-2" data-type="IDK">Not Sure</button>
-        </div>
-      </div>
-
-      <!-- Age -->
-      <div class="mb-3">
-        <label class="form-label">Age</label>
-        <div id="ageGroup" class="button-grid">
-          <button type="button" class="btn btn-outline-info">18 – 25</button>
-          <button type="button" class="btn btn-outline-info">26 – 35</button>
-          <button type="button" class="btn btn-outline-info">36 – 45</button>
-          <button type="button" class="btn btn-outline-info">46 – 55</button>
-          <button type="button" class="btn btn-outline-info">56 – 65</button>
-          <button type="button" class="btn btn-outline-info">66 – 75</button>
         </div>
       </div>
 
@@ -71,11 +74,11 @@
       <!-- Dates -->
       <div class="mb-3 row gx-2">
         <div class="col-12 col-md-6">
-          <label class="form-label" for="startDate">Start Date</label>
+          <label class="form-label" for="startDate">Payment Start</label>
           <input type="month" class="form-control" id="startDate" />
         </div>
         <div class="col-12 col-md-6">
-          <label class="form-label" for="endDate">End Date</label>
+          <label class="form-label" for="endDate">Payment End </label>
           <input type="month" class="form-control" id="endDate" disabled />
         </div>
       </div>
@@ -94,7 +97,8 @@
         <div id="genderGroup" class="button-grid">
           <button type="button" class="btn btn-outline-primary">Male</button>
           <button type="button" class="btn btn-outline-primary">Female</button>
-         </div>
+          <button type="button" class="btn btn-outline-primary span-2">Prefer not to answer</button>
+        </div>
       </div>
 
       <!-- Height -->
@@ -109,7 +113,7 @@
         </select>
       </div>
 
-   <!-- Weight -->
+      <!-- Weight -->
       <div class="mb-3">
         <label class="form-label">Weight Overview</label>
         <div id="healthProfileGroup" class="button-grid">
@@ -117,9 +121,11 @@
           <button type="button" class="btn btn-outline-success">Normal Weight</button>
           <button type="button" class="btn btn-outline-success">Overweight</button>
           <button type="button" class="btn btn-outline-success">Obesity</button>
+          <button type="button" class="btn btn-outline-success">Severe Obesity</button>
         </div>
       </div>
-      
+
+
       <!-- Smoking -->
       <div class="mb-3">
         <label class="form-label">Do You Smoke?</label>
