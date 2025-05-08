@@ -11,6 +11,35 @@
   <!-- Custom CSS -->
   <link href="style.css" rel="stylesheet" />
 </head>
+
+<!-- ✅ START OF NAVBAR SECTION -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="INSERT-HOMEPAGE-LINK.html">SmarterPayouts</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="INSERT-HOMEPAGE-LINK.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Quote Calculator</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Process</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="getaquote.html">Get A Quote</a></li>
+            <li><a class="dropdown-item" href="reviewoffer.html">Review Offer</a></li>
+            <li><a class="dropdown-item" href="court-approval-process.html">Court Approval</a></li>
+            <li><a class="dropdown-item" href="getyourcash.html">Get Your Cash</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ✅ END OF NAVBAR SECTION -->
+
 <body>
 
 <div class="container py-5">
@@ -64,12 +93,19 @@
         <input type="number" class="form-control" id="paymentAmount" placeholder="500.00" required />
       </div>
 
-      <!-- Annual Increase -->
-      <div class="mb-3">
-        <label class="form-label" for="annualIncrease">Annual Increase (%)</label>
-        <input type="range" id="annualIncrease" min="0" max="10" step="1" />
-        <div id="annualIncreaseValue" class="range-value">0%</div>
-      </div>
+<!-- ✅ Annual Increase (%): Compact Grid -->
+<div class="mb-3">
+  <label class="form-label">Annual Increase (%)</label>
+  <div id="annualIncreaseButtons" class="button-grid small-grid">
+    <button type="button" class="btn btn-outline-primary">1%</button>
+    <button type="button" class="btn btn-outline-primary">2%</button>
+    <button type="button" class="btn btn-outline-primary">3%</button>
+    <button type="button" class="btn btn-outline-primary">4%</button>
+    <button type="button" class="btn btn-outline-primary">5%</button>
+    <button type="button" class="btn btn-outline-primary">6%</button>
+   </div>
+</div>
+
 
       <!-- Dates -->
       <div class="mb-3 row gx-2">
@@ -174,6 +210,34 @@
     </div>
   </form>
 </div>
+
+<div id="resultsScreen" style="display: none; padding: 2rem; text-align: center;">
+  <div style="font-size: 2.5rem;">💰</div>
+  <h3 class="text-success fw-bold mt-3">Congratulation</h3>
+  <p class="text-muted">Here’s your Early Payout offer based on the information provided. Funding in as little as 30 days.</p>
+
+  <div class="my-3 p-3 rounded" style="background-color: #4ade80; color: #fff;">
+    <strong>Minimum Offer</strong><br />
+    <span style="font-size: 1.5rem;">$159,945.40</span>
+  </div>
+
+  <div class="my-3 p-3 rounded" style="background-color: #f0fdf4; color: #000;">
+    <strong>Maximum Offer</strong><br />
+    <span style="font-size: 1.5rem;">$174,892.97</span>
+  </div>
+
+  <div class="my-3 p-3 rounded" style="background-color: #4ade80; color: #fff;">
+    <strong>Family Protection</strong><br />
+    <span>$25,000.00</span>
+  </div>
+
+  <p class="mt-4 fw-bold">Call Us</p>
+  <p style="color: #16a34a; font-weight: bold;">+1 (561) -583-1280</p>
+
+  <small style="color: #16a34a;">© 2025 SmarterPayouts. All rights reserved.</small>
+</div>
+
+
 
 <script src="script.js"></script>
 </body>
