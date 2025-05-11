@@ -1,0 +1,25 @@
+{
+    "basicInfo": {
+      "ageGroup": "36 – 45",
+      "paymentType": "LCP",
+      "paymentMode": "Monthly",
+      "paymentAmount": 500,
+      "annualIncrease": 2,
+      "startDate": "2025-06",
+      "endDate": "2026-06"
+    },
+    "healthInfo": {
+      "gender": "Male",
+      "height": "5'4\"–5'10\"",
+      "weightCategory": "Normal Weight",
+      "smoking": "No",
+      "healthProfile": "Normal",
+      "trafficViolations": "No",
+      "cardiacHealth": "Normal"
+    },
+    "meta": {
+      "calculatedOffer": null,
+      "submittedAt": null
+    }
+  }
+  
